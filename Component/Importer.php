@@ -61,9 +61,9 @@ class Importer
             $website = $websiteManager->getByHostname($url);
 
             if (!$website instanceof Website) {
-                
+
                 $websiteId = $websiteManager->create($user, $url, $url);
-                $website = $websiteManager->getById($websiteId);
+                $website = $websiteManager->getWebsiteById($websiteId);
                 $importWebsitesCount++;
             }
 
@@ -72,7 +72,7 @@ class Importer
                 $page = $pageManager->getByUrl($pageImport);
 
                 if (!$page instanceof Page) {
-
+\var_dump($pageImport);
                     $pageManager->create($website, $pageImport);
                     $importPagesCount++;
                 }
