@@ -3,7 +3,7 @@
 namespace luisrafaelinf\SitemapImporter\ConstantImporter;
 
 class ConstImporterXML {
-    public const MODULE = 'module';
+    public const MODULE = 'simplexml';
     public const WEBSITES = 'websites';
     public const PAGES = 'pages';
     public const SITEMAP = 'sitemap';
