@@ -74,8 +74,8 @@ class ImporterAction extends ForbiddenAbstract
             throw new \Exception('moving file failed.');
         }
 
-        try {
-            
+        
+
             $sitemapImporter = new Importer($uploadFile, $this->database);
             $result = $sitemapImporter->import($user->getLogin());
 
@@ -86,9 +86,7 @@ class ImporterAction extends ForbiddenAbstract
                 $_SESSION['flash'] = 'Finished import.';
             }
 
-        } catch (\Exception $e) {
-            $_SESSION['flash'] = 'Exception occurred while importing sitemap, check content correctness';
-        }
+
 
 
 
