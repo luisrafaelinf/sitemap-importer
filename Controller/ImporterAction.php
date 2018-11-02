@@ -74,6 +74,7 @@ class ImporterAction extends ForbiddenAbstract
             throw new \Exception('moving file failed.');
         }
 
+        $result =[];
         try {
             $sitemapImporter = new Importer($uploadFile, $this->database);
             $result = $sitemapImporter->import($user->getLogin());
