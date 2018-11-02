@@ -11,7 +11,7 @@ use Snowdog\DevTest\Constant\SessionValue;
 use luisrafaelinf\SitemapImporter\Component\Importer;
 use luisrafaelinf\SitemapImporter\ConstantImporter\ConstImporterXML;
 
-class ImporterAction extends ForbiddenAbstract
+class ImporterAction
 {
 
     /**
@@ -33,13 +33,13 @@ class ImporterAction extends ForbiddenAbstract
     public function execute()
     {
         if (!isset($_SESSION[SessionValue::LOGIN])) {
-            return $this->forbidden();
+            return http_response_code('403');
         }
 
         $user = $this->userManager->getByLogin($_SESSION[SessionValue::LOGIN]);
 
         if (!$user) {
-            return $this->forbidden();
+            return http_response_code('403');
         }
 
         $sitemapFile = $_FILES[ConstImporterXML::SITEMAP];
