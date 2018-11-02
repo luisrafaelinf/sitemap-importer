@@ -61,7 +61,7 @@ class Importer
             $website = $websiteManager->getByHostname($url);
 
             if (!$website instanceof Website) {
-
+\var_dump($url);
                 $websiteId = $websiteManager->create($user, $url, $url);
                 $website = $websiteManager->getById($websiteId);
                 $importWebsitesCount++;
