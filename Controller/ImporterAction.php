@@ -7,10 +7,11 @@ use Snowdog\DevTest\Model\User;
 use Snowdog\DevTest\Model\UserManager;
 use Snowdog\DevTest\Controller\AbstractController\ForbiddenAbstract;
 use Snowdog\DevTest\Constant\SessionValue;
+
 use luisrafaelinf\SitemapImporter\Component\Importer;
 use luisrafaelinf\SitemapImporter\ConstantImporter\ConstImporterXML;
 
-class ImportAction extends ForbiddenAbstract
+class ImporterAction extends ForbiddenAbstract
 {
 
     /**
@@ -43,7 +44,6 @@ class ImportAction extends ForbiddenAbstract
 
         $sitemapFile = $_FILES[ConstImporterXML::SITEMAP];
 
-        // FILES validation
         if (
             !isset($sitemapFile[ConstImporterXML::ERROR]) ||
             is_array($sitemapFile[ConstImporterXML::ERROR])
