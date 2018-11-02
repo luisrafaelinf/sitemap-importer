@@ -1,0 +1,13 @@
+<form class="form-inline" id="sitemapUploadForm" method="post" enctype="multipart/form-data" action="/sitemap/upload">
+    <label class="btn btn-default">
+        Importer XML <input type="file" id="upload" name="sitemap" style="display: none;">
+    </label>
+</form>
+
+<script>
+    $(document).ready(function() {
+        $('#upload').change(function() {
+            $('#sitemapUploadForm').submit();
+        });
+    });
+</script>

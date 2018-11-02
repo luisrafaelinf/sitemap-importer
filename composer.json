@@ -1,0 +1,9 @@
+{
+  "name": "luisrafaelinf/sitemap-importer",
+  "version": "master",
+  "autoload": {
+    "psr-4": {
+      "luisrafaelinf\\SitemapImporter\\": "/"
+    }
+  }
+}
